@@ -1,0 +1,10 @@
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.dll.config
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.pdb
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\DDD.OnlineStore.Domain.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\EntityFramework.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\DDD.OnlineStore.Domain.pdb
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\bin\Debug\EntityFramework.xml
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\obj\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.csprojResolveAssemblyReference.cache
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\obj\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess\obj\Debug\DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.pdb

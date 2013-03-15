@@ -1,0 +1,4 @@
+E:\DEVELOPMENT\Anwendungen\ddd\IL.OnlineStore\IL.OnlineStore.Domain.Model\bin\Debug\IL.OnlineStore.Domain.dll
+E:\DEVELOPMENT\Anwendungen\ddd\IL.OnlineStore\IL.OnlineStore.Domain.Model\bin\Debug\IL.OnlineStore.Domain.pdb
+E:\DEVELOPMENT\Anwendungen\ddd\IL.OnlineStore\IL.OnlineStore.Domain.Model\obj\Debug\IL.OnlineStore.Domain.dll
+E:\DEVELOPMENT\Anwendungen\ddd\IL.OnlineStore\IL.OnlineStore.Domain.Model\obj\Debug\IL.OnlineStore.Domain.pdb

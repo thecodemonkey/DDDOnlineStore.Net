@@ -1,0 +1,5 @@
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Model\bin\Debug\DDD.OnlineStore.Domain.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Model\bin\Debug\DDD.OnlineStore.Domain.pdb
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Model\obj\Debug\DDD.OnlineStore.Domain.csprojResolveAssemblyReference.cache
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Model\obj\Debug\DDD.OnlineStore.Domain.dll
+E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.Model\obj\Debug\DDD.OnlineStore.Domain.pdb
