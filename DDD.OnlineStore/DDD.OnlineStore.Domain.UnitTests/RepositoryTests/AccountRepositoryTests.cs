@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DDD.OnlineStore.Domain.UnitTests.RepositoryTests
 {
     [TestClass]
-    public class AccountRepositoryTests
+    public class AccountRepositoryTests 
     {
         [TestMethod]
         public void SelectAccountByName_FOO_Returns_IQueryable() 

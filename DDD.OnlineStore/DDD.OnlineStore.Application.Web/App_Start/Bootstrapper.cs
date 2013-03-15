@@ -10,7 +10,7 @@ using DDD.OnlineStore.Domain.Model;
 namespace DDD.OnlineStore.Application.Web
 {
     public static class Bootstrapper
-    {
+    { 
         public static void Initialise()
         {
             var container = BuildUnityContainer();

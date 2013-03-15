@@ -10,4 +10,4 @@ namespace DDD.OnlineStore.Domain.Common
     {
         int ID { get; }
     }
-}
+} 
