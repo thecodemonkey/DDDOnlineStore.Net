@@ -13,7 +13,7 @@ namespace DDD.OnlineStore.Domain.UnitTests.RepositoryTests
         [TestMethod]
         public void SelectAccountByName_FOO_Returns_IQueryable() 
         { 
-        
+         
         }
 
         [TestMethod]
