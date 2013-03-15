@@ -1,14 +1,14 @@
 ﻿using DDD.OnlineStore.Domain.Model;
 using DDD.OnlineStore.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;                            
+using System.Collections.Generic;         
+using System.Linq;                        
+using System.Text;                         
+using System.Threading.Tasks;             
 
 namespace DDD.OnlineStore.Domain.Services
 {
-    public class AuthenticationService
+    public class AuthenticationService : IDisposable
     {
         private readonly UserRepository _userRepository;
 
@@ -29,6 +29,11 @@ namespace DDD.OnlineStore.Domain.Services
             {
                 throw new Exception("User was not found");
             }
+        }
+
+        public void Dispose()
+        {                       
+            this._userRepository.Dispose();
         }
     }
 }

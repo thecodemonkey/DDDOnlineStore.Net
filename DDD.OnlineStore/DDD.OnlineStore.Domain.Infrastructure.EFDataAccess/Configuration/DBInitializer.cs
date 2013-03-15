@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Configuration
 {
-    public class DBInitializer : DropCreateDatabaseIfModelChanges<DomainContext>
+    public class DBInitializer : DropCreateDatabaseIfModelChanges<EFDomainContext>
     {
-        protected override void Seed(DomainContext context)
+        protected override void Seed(EFDomainContext context)
         {
             var accounts = new List<User>
             {
@@ -23,7 +23,7 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Configuration
                new User { LoginName = "Foo6", Password = "Bar6", FirstName = "Larry",   LastName = "Ellison" },
                new User { LoginName = "Foo7", Password = "Bar7", FirstName = "Pierre",   LastName = "Omidyar" }
             };
-            accounts.ForEach(s => context.Users.Add(s));
+            accounts.ForEach(s => context.UserSet.Add(s));
 
 
 

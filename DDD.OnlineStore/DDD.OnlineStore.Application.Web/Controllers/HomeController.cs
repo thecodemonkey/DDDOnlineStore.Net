@@ -9,16 +9,16 @@ namespace DDD.OnlineStore.Application.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private UserRepository _accountRepository;
+        private ProductRepository _productRepository;
 
-        public HomeController(UserRepository accountRepository) 
+        public HomeController(ProductRepository productRepository) 
         {
-            this._accountRepository = accountRepository;
+            this._productRepository = productRepository;
         }
 
         public ActionResult Index()
         {
-            return View();
+            return View(this._productRepository.GetAll());
         }
     }
 }

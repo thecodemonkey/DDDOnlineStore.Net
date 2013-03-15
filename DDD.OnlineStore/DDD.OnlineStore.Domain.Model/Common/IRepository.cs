@@ -13,10 +13,10 @@ namespace DDD.OnlineStore.Domain.Common
         IQueryable<TEntity> Queryable { get; }
 
         TEntity GetByID(int id);
-        void Add(TEntity account);
+        void Insert(TEntity entity);
+        void Update(TEntity entity);
         void Delete(int id);
         IEnumerable<TEntity> GetAll();
         void Save();
-        void Dispose();
     }
 }

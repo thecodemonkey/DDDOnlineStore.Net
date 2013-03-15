@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Services
 {
-    public class PurchaseService
+    public class PurchaseService : IDisposable
     {
         public OrderRepository _repository;
 
@@ -24,6 +24,11 @@ namespace DDD.OnlineStore.Domain.Services
 
             //this._repository.Add(order);
             //this._repository.Save();
+        }
+
+        public void Dispose()
+        {
+            this._repository.Dispose();
         }
     }
 }

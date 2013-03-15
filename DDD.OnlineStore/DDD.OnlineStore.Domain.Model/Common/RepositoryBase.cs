@@ -35,9 +35,14 @@ namespace DDD.OnlineStore.Domain.Common
             return this._repository.GetAll();
         }
 
-        public void Add(TEntity account)
+        public void Insert(TEntity entity)
         {
-            this._repository.Add(account);
+            this._repository.Insert(entity);
+        }
+
+        public void Update(TEntity entity) 
+        {
+            this._repository.Update(entity);
         }
 
         public void Delete(int id)

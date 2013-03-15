@@ -34,7 +34,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         {
             try
             {
-                this._userRepository.Add(user);
+                this._userRepository.Insert(user);
                 this._userRepository.Save();
 
                 return RedirectToAction("Index");
@@ -57,7 +57,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         {
             try
             {
-                this._userRepository.Add(user);
+                this._userRepository.Update(user);
                 this._userRepository.Save();
 
                 return RedirectToAction("Index");

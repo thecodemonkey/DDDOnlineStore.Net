@@ -2,6 +2,7 @@
 using DDD.OnlineStore.Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,10 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
     public class GenericRepository<TEntity> : IRepository<TEntity>
       where TEntity : class, IEntity 
     {
-        private DomainContext _context;
+        private bool isDisposed = false;
+        private EFDomainContext _context;
 
-        public GenericRepository(DomainContext context)
+        public GenericRepository(EFDomainContext context)
         {
             this._context = context;
         }
@@ -23,9 +25,24 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
             return this.Queryable.Where(t => t.ID == id).FirstOrDefault();
         }
 
-        public void Add(TEntity account)
+        public void Insert(TEntity account)
         {
             this._context.Set<TEntity>().Add(account);
+        }
+
+        public void Update(TEntity entity)
+        {
+            this._context.Set<TEntity>().Attach(entity);
+            this._context.Entry(entity).State = EntityState.Modified;
+
+            //catch (DbUpdateConcurrencyException e)
+            //{
+            //    var entry = e.Entries.Single();
+            //    var databaseValues = (TEntity)entry.GetDatabaseValues().ToObject();
+            //    var clientValues = (TEntity)entry.Entity;
+
+            //    throw new UpdateConcurrencyException<TEntity>(clientValues, databaseValues);
+            //}        
         }
 
         public void Delete(int id)
@@ -44,9 +61,22 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
             this._context.SaveChanges();
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.isDisposed)
+            {
+                if (disposing)
+                {
+                    this._context.Dispose();
+                }
+            }
+            this.isDisposed = true;
+        }
+
         public void Dispose()
         {
-            this._context.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public IQueryable<TEntity> Queryable

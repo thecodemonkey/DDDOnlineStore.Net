@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Configuration
 {
-    public class DBConfiguration : DbMigrationsConfiguration<DomainContext>
+    public class DBConfiguration : DbMigrationsConfiguration<EFDomainContext>
     {
         public DBConfiguration()
         {

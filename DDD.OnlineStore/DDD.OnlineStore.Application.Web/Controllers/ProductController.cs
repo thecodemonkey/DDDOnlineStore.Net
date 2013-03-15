@@ -12,7 +12,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
     {
         private ProductRepository _productRepository;
 
-        public ProductController(ProductRepository productRepository) 
+        public ProductController(ProductRepository productRepository, UserRepository users) 
         {
             this._productRepository = productRepository;
         }
@@ -34,7 +34,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         {
             try
             {
-                this._productRepository.Add(product);
+                this._productRepository.Insert(product);
                 this._productRepository.Save();
 
                 return RedirectToAction("Index");
@@ -57,7 +57,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         {
             try
             {
-                this._productRepository.Add(product);
+                this._productRepository.Update(product);
                 this._productRepository.Save();
 
                 return RedirectToAction("Index");

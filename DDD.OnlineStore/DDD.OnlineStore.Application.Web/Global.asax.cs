@@ -1,4 +1,6 @@
-﻿using DDD.OnlineStore.Domain.Infrastructure.EFDataAccess;
+﻿using DDD.OnlineStore.Application.Web.Common;
+using DDD.OnlineStore.Domain.Infrastructure.EFDataAccess;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +26,12 @@ namespace DDD.OnlineStore.Application.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Bootstrapper.Initialise();
+            IoCConfig.Initialise();
 
             //creates a new db and fills with initial data on startup ...
-            DomainContext.CreateInitialDB();
+            EFDomainContext.CreateInitialDB();
         }
+
+        
     }
 }

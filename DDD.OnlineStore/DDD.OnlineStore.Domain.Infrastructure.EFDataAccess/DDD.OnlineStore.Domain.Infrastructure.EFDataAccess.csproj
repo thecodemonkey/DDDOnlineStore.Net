@@ -49,7 +49,7 @@
     <Compile Include="Common\GenericRepository.cs" />
     <Compile Include="Configuration\DBConfiguration.cs" />
     <Compile Include="Configuration\DBInitializer.cs" />
-    <Compile Include="DomainContext.cs" />
+    <Compile Include="EFDomainContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
