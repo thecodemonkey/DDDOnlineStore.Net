@@ -1,9 +1,0 @@
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\DDD.OnlineStore.Domain.UnitTests.dll
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\DDD.OnlineStore.Domain.UnitTests.pdb
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\DDD.OnlineStore.Domain.dll
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\Rhino.Mocks.dll
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\DDD.OnlineStore.Domain.pdb
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\bin\Debug\Rhino.Mocks.xml
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\obj\Debug\DDD.OnlineStore.Domain.UnitTests.csprojResolveAssemblyReference.cache
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\obj\Debug\DDD.OnlineStore.Domain.UnitTests.dll
-E:\DEVELOPMENT\Anwendungen\ddd\DDD.OnlineStore\DDD.OnlineStore.Domain.UnitTests\obj\Debug\DDD.OnlineStore.Domain.UnitTests.pdb
