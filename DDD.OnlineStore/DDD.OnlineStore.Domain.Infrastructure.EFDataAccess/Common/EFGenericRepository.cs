@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
 {
-    public class GenericRepository<TEntity> : IRepository<TEntity>
+    public class EFGenericRepository<TEntity> : IRepository<TEntity>
       where TEntity : class, IEntity 
     {
         private bool isDisposed = false;
         private EFDomainContext _context;
 
-        public GenericRepository(EFDomainContext context)
+        public EFGenericRepository(EFDomainContext context)
         {
             this._context = context;
         }

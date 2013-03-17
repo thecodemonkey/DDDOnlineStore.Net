@@ -11,17 +11,22 @@ namespace DDD.OnlineStore.Application.Web.Common
 {
     public static class UnityDomainExtensions
     {
-        public static void RegisterDomainRepository<TEntity, TDomainRepository>(this UnityContainer container) 
+        public static IUnityContainer RegisterDomainRepository<TEntity, TDomainRepository>(this IUnityContainer container) 
             where TEntity : class, IEntity
             where TDomainRepository : RepositoryBase<TEntity>
         {
-            container.RegisterType<IRepository<TEntity>, GenericRepository<TEntity>>(new InjectionConstructor(typeof(EFDomainContext)));
-            container.RegisterType<TDomainRepository>(new InjectionConstructor(typeof(IRepository<TEntity>)));            
+            return container.RegisterType<IRepository<TEntity>, EFGenericRepository<TEntity>>(new InjectionConstructor(typeof(EFDomainContext)))
+                            .RegisterType<TDomainRepository>(new InjectionConstructor(typeof(IRepository<TEntity>)));
         }
 
-        public static void RegisterDomainService<TService, TDomainRepository>(this UnityContainer container) 
+        public static IUnityContainer RegisterDomainService<TService, TDomainRepository>(this IUnityContainer container) 
         {
-            container.RegisterType<TService>(new InjectionConstructor(typeof(TDomainRepository)));
+            return container.RegisterDomainService<TService>(typeof(TDomainRepository));
+        }
+
+        public static IUnityContainer RegisterDomainService<TService>(this IUnityContainer container, params object[] repositoryTypes)
+        {
+            return container.RegisterType<TService>(new InjectionConstructor(repositoryTypes));
         }
 
 

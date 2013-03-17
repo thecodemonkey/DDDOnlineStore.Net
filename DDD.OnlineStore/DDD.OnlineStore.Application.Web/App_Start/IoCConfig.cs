@@ -29,12 +29,12 @@ namespace DDD.OnlineStore.Application.Web
             //method. And after the end of HttpRequest the Dispose(true) method of IDisposable object (DomainContext is IDisposable) will 
             //be automatically called! Nice feature implemented by Unity.MVC3. More information about object lifetimemanagement
             //using Unity within MVC > 3 applications look here: http://unitymvc3.codeplex.com/
-            container.RegisterType<EFDomainContext>(new HierarchicalLifetimeManager());
-
-            container.RegisterDomainRepository<Product, ProductRepository>();
-            container.RegisterDomainRepository<User, UserRepository>();
-
-            container.RegisterDomainService<AuthenticationService, UserRepository>(); 
+            container.RegisterType<EFDomainContext>(new HierarchicalLifetimeManager())
+                     .RegisterDomainRepository<Product, ProductRepository>()
+                     .RegisterDomainRepository<User, UserRepository>()
+            //registers domain services
+                     .RegisterDomainService<AuthenticationService, UserRepository>()
+                     .RegisterDomainService<ShoppingCartService>(typeof(ProductRepository), typeof(UserRepository));
             
             return container;
         }

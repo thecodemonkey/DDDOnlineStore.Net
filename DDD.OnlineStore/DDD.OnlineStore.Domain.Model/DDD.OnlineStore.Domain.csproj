@@ -58,6 +58,7 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\PurchaseService.cs" />
+    <Compile Include="Services\ShoppingCartService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

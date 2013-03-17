@@ -58,12 +58,5 @@
       <FileName>Model\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="DDD.OnlineStore.Domain.Common.IDomainContext">
-    <Position X="14" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\IDomainContext.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

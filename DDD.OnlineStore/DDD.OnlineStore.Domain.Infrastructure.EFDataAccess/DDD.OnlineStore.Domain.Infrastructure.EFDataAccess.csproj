@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\GenericRepository.cs" />
+    <Compile Include="Common\EFGenericRepository.cs" />
     <Compile Include="Configuration\DBConfiguration.cs" />
     <Compile Include="Configuration\DBInitializer.cs" />
     <Compile Include="EFDomainContext.cs" />
