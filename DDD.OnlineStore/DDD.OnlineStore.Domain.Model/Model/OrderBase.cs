@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Model
 {
-    public abstract class OrderBase
+    public abstract class OrderBase : Entity
     {
-        private List<OrderItem> _items;
-
         public OrderBase() 
         {
-            this._items = new List<OrderItem>();
+            this.Items = new List<OrderItem>();
         }
 
         public int QuantityUniqueItems 
@@ -39,29 +37,21 @@ namespace DDD.OnlineStore.Domain.Model
             }
         }
 
-        public IEnumerable<OrderItem> Items 
-        {
-            get 
-            {
-                return _items.AsReadOnly();
-            }
-            set 
-            {
-                this._items = value.ToList();
-            }
-        }
+        public virtual ICollection<OrderItem> Items {get; set;}
 
         protected virtual void Add(OrderItem item)
         {
-            if (item == null || item.IsValid)
+            if (item == null || item.IsValid == false)
                 throw new Exception("cann't add an invalid item to the order");
 
-            this._items.Add(item);
+            this.Items.Add(item);
         }
 
         protected virtual void Remove(int id)
         {
-            this._items.RemoveAll(i => i.ProductID == id);
+            var item = this.Items.FirstOrDefault(i => i.ID == id);
+
+            if (item != null) this.Items.Remove(item);
         }
     }
 }

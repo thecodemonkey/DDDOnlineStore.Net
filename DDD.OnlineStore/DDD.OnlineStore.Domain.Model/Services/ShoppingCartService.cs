@@ -1,9 +1,9 @@
-﻿using DDD.OnlineStore.Domain.Model;
+﻿using DDD.OnlineStore.Domain.Model;             
 using DDD.OnlineStore.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System;                           
+using System.Collections.Generic;       
+using System.Linq;                  
+using System.Text;              
 using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Services
@@ -19,10 +19,12 @@ namespace DDD.OnlineStore.Domain.Services
             this._userRepository = userRepository;
         }
 
-        public void UserBuysProduct(int productID, int quantity, User user) 
-        {                                                                 
+        public void UserBuysProduct(int productID, int quantity, string userName)        
+        {                                                                       
+            User user = this._userRepository.GetUserByLoginName(userName);
             Product product = this._productRepository.GetByID(productID);
-            user.Cart.AddProduct(product, quantity);            
+
+            user.ShoppingCart.AddProduct(product, quantity);            
 
             this._userRepository.Save();
         }

@@ -12,9 +12,11 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Configuration
     {
         protected override void Seed(EFDomainContext context)
         {
+            context.Database.ExecuteSqlCommand("ALTER TABLE Users ADD CONSTRAINT uc_ShoppingCart UNIQUE(ShoppingCartID)");
+
             var accounts = new List<User>
             {
-               new User { LoginName = "Foo", Password = "Bar", FirstName = "Max", LastName = "Mustermann" },
+               new User { LoginName = "Foo", Password = "Bar", FirstName = "Max", LastName = "Mustermann" } ,
                new User { LoginName = "Foo1", Password = "Bar1", FirstName = "Bill",   LastName = "Gates" } ,
                new User { LoginName = "Foo2", Password = "Bar2", FirstName = "Steve",   LastName = "Jobs" } ,
                new User { LoginName = "Foo3", Password = "Bar3", FirstName = "Steve",   LastName = "Woznijak" },
@@ -23,10 +25,15 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Configuration
                new User { LoginName = "Foo6", Password = "Bar6", FirstName = "Larry",   LastName = "Ellison" },
                new User { LoginName = "Foo7", Password = "Bar7", FirstName = "Pierre",   LastName = "Omidyar" }
             };
+
             accounts.ForEach(s => context.UserSet.Add(s));
 
-
-
+            var products = new List<Product>
+            {
+                new Product { Name = "myNewProduct", Price = 20, Quantity = 5 },
+                new Product { Name = "secondproduct", Price = 10, Quantity = 2 }
+            };
+            products.ForEach(p => context.ProductSet.Add(p));
 
             context.SaveChanges();
         }

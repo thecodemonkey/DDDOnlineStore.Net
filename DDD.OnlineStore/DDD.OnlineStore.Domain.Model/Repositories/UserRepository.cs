@@ -12,14 +12,14 @@ namespace DDD.OnlineStore.Domain.Repositories
     {
         public UserRepository(IRepository<User> repository) : base(repository) { }
 
-        public IQueryable<User> SelectUserByName(string name)
+        public IQueryable<User> SelectUserByLoginName(string name)
         {
             return this.Queryable.Where(x => x.LoginName.ToLower().Equals(name.ToLower()));
         }
 
-        public User GetUserByName(string name)
+        public User GetUserByLoginName(string name)
         {
-            return this.SelectUserByName(name)
+            return this.SelectUserByLoginName(name)
                        //.Include(t => t.Cart)
                        .FirstOrDefault();
         }

@@ -8,6 +8,6 @@ namespace DDD.OnlineStore.Domain.Common
 {
     public interface IEntity
     {
-        int ID { get; }
+        int ID { get; set; }
     }
 } 

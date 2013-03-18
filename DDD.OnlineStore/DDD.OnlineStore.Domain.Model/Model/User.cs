@@ -10,7 +10,7 @@ namespace DDD.OnlineStore.Domain.Model
     {
         public User() 
         {
-            //this.Cart = new ShoppingCart();
+            this.ShoppingCart = new ShoppingCart();
         }
 
         public string FirstName { get; set; }
@@ -19,6 +19,7 @@ namespace DDD.OnlineStore.Domain.Model
         public string LoginName { get; set; }
         public string Password { get; set; }
 
-        //public ShoppingCart Cart { get; set; }             
+        public int? ShoppingCartID { get; set; }
+        public virtual ShoppingCart ShoppingCart { get; set; }
     }
 }

@@ -26,9 +26,9 @@ namespace DDD.OnlineStore.Application.Web
             var container = new UnityContainer();
 
             //HierarchicalLifetimeManager creates one instance per request. a new instance will be created on first call of the container.Resolve<T> 
-            //method. And after the end of HttpRequest the Dispose(true) method of IDisposable object (DomainContext is IDisposable) will 
+            //method. after the end of HttpRequest the Dispose(true) method of IDisposable object (EFDomainContext is IDisposable) will 
             //be automatically called! Nice feature implemented by Unity.MVC3. More information about object lifetimemanagement
-            //using Unity within MVC > 3 applications look here: http://unitymvc3.codeplex.com/
+            //using Unity within MVC > 3 applications, look at this page: http://unitymvc3.codeplex.com/
             container.RegisterType<EFDomainContext>(new HierarchicalLifetimeManager())
                      .RegisterDomainRepository<Product, ProductRepository>()
                      .RegisterDomainRepository<User, UserRepository>()

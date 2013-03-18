@@ -17,9 +17,17 @@ namespace DDD.OnlineStore.Domain.Services
             this._userRepository = userRepository;
         }
 
+        public UserRepository UserRepository 
+        {
+            get 
+            {
+                return this._userRepository;
+            }
+        }
+
         public User Authenticate(string name, string password)
         {
-            User user = this._userRepository.GetUserByName(name);
+            User user = this._userRepository.GetUserByLoginName(name);
 
             if (user != null && user.Password.Equals(password))
             {

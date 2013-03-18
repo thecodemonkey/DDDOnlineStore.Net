@@ -19,7 +19,7 @@
   <Class Name="DDD.OnlineStore.Domain.Model.OrderBase">
     <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIgAAAAAAAADAAAAAAABAAAABAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIhAAAAAAAAjAAAAAAABAgAABAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\OrderBase.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -43,13 +43,9 @@
   <Class Name="DDD.OnlineStore.Domain.Model.Order">
     <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIBAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Order.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="User" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="DDD.OnlineStore.Domain.Model.User">
     <Position X="5.25" Y="2.75" Width="1.5" />

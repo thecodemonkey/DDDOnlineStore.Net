@@ -1,21 +1,23 @@
-﻿using DDD.OnlineStore.Domain.Repositories;
+﻿using DDD.OnlineStore.Application.Web.Common;
+using DDD.OnlineStore.Domain.Repositories;
 using DDD.OnlineStore.Domain.Services;
-using System;
+using System;                       
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Linq;           
+using System.Web;        
 using System.Web.Mvc;
 
 namespace DDD.OnlineStore.Application.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
         private ProductRepository _productRepository;
-        private ShoppingCartService _shoppingCart;
+        private ShoppingCartService _shoppingCartService;
 
         public HomeController(ProductRepository productRepository, ShoppingCartService shoppingCartService) 
         {
             this._productRepository = productRepository;
+            this._shoppingCartService = shoppingCartService;
         }
 
         public ActionResult Index()
@@ -24,10 +26,9 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProductToShoppingCart(string hdnProductID, string hdnQuantity)   
+        public ActionResult AddProductToShoppingCart(int hdnProductID, int hdnQuantity)   
         {                                                                                   
-            _shoppingCart.UserBuysProduct(hdnProductID, hdnQuantity, SessionContext.User);
-
+            _shoppingCartService.UserBuysProduct(hdnProductID, hdnQuantity, SessionContext.User.Identity.Name);
             var products = this._productRepository.GetAll();
 
             return View("Index", products);

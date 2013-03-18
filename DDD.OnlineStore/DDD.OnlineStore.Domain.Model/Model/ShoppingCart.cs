@@ -1,4 +1,5 @@
-﻿using DDD.OnlineStore.Domain.Factories;
+﻿using DDD.OnlineStore.Domain.Common;
+using DDD.OnlineStore.Domain.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace DDD.OnlineStore.Domain.Model
     {
         public ShoppingCart() : base() { }
 
+        public string Name { get; set; }
+
         public void AddProduct(Product product, int quantity) 
         {
             if (product == null)
@@ -18,7 +21,7 @@ namespace DDD.OnlineStore.Domain.Model
 
             if (quantity == 0)
                 throw new Exception("quantity should be bigger than 0 !");
-
+            
             OrderItem existingItem = this.Items.FirstOrDefault(i => i.ProductID == product.ID);
 
             if (existingItem != null)

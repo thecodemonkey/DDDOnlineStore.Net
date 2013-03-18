@@ -45,7 +45,7 @@
     <Compile Include="Common\QueryableExtensions.cs" />
     <Compile Include="Common\RepositoryBase.cs" />
     <Compile Include="Factories\OrderFactory.cs" />
-    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\PurchaseOrder.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\OrderBase.cs" />

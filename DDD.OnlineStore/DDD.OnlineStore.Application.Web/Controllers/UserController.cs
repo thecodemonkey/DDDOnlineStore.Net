@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace DDD.OnlineStore.Application.Web.Controllers 
 {
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         private UserRepository _userRepository;
 

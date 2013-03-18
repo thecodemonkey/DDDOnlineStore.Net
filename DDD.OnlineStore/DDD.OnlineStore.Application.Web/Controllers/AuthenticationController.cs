@@ -1,24 +1,25 @@
 ﻿using DDD.OnlineStore.Application.Web.Models;
-using DDD.OnlineStore.Domain.Model;      
+using DDD.OnlineStore.Application.Web.Services;
+using DDD.OnlineStore.Domain.Model;
 using DDD.OnlineStore.Domain.Services;
-using System;                       
+using System;
 using System.Collections.Generic;
-using System.Linq;              
-using System.Net;           
-using System.Net.Http;    
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Mvc;
 using System.Web.Security;
 
 
 namespace DDD.OnlineStore.Application.Web.Controllers
 {
-    public class AuthenticationController : Controller
+    public class AuthenticationController : ControllerBase
     {
-        private AuthenticationService _authenticationService;
+        private LoginService _loginService;
 
-        public AuthenticationController(AuthenticationService authenticationService)
+        public AuthenticationController(LoginService loginService)
         {
-            this._authenticationService = authenticationService;
+            this._loginService = loginService;
         }
 
         [AllowAnonymous]
@@ -34,9 +35,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         {
             try
             {
-                User account = this._authenticationService.Authenticate(accountModel.UserName, accountModel.Password);
-
-                FormsAuthentication.SetAuthCookie(account.LoginName, accountModel.RememberMe);
+                this._loginService.Login(accountModel);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -49,7 +48,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
 
         public ActionResult Logout() 
         {
-            FormsAuthentication.SignOut();
+            this._loginService.Logout();
 
             return RedirectToAction("Index");
         }
