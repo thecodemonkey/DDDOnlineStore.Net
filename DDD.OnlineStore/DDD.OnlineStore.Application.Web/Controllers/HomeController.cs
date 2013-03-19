@@ -28,7 +28,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
         [HttpPost]
         public ActionResult AddProductToShoppingCart(int hdnProductID, int hdnQuantity)   
         {                                                                                   
-            _shoppingCartService.UserBuysProduct(hdnProductID, hdnQuantity, SessionContext.User.Identity.Name);
+            _shoppingCartService.AddProductToShoppingCart(hdnProductID, hdnQuantity, SessionContext.User.Identity.Name);
             var products = this._productRepository.GetAll();
 
             return View("Index", products);

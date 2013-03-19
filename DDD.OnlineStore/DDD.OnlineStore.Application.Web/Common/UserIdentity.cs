@@ -16,6 +16,14 @@ namespace DDD.OnlineStore.Application.Web.Common
             this._user = user;
         }
 
+        public User DomainUser 
+        {
+            get 
+            {
+                return this._user;
+            }
+        }
+
         public string AuthenticationType
         {
             get { return "OnlineStoreUserAuthentication"; }

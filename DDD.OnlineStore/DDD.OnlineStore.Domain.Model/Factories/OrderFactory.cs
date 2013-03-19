@@ -13,6 +13,7 @@ namespace DDD.OnlineStore.Domain.Factories
         {
             OrderItem item = new OrderItem();
             item.ProductID = product.ID;
+            item.ProductName = product.Name;
             item.PriceOfSingleProduct = product.Price;
             item.Quantity = quantity;
 

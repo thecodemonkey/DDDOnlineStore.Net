@@ -18,6 +18,7 @@ namespace DDD.OnlineStore.Domain.Model
         //public int ShoppingCartID { get; set; }
         //public virtual ShoppingCart ShoppingCart { get; set; }
 
+        public string ProductName { get; set; }
         public int ProductID { get; set; }
         public int Quantity { get; set; }
         public double PriceOfSingleProduct { get; set; }

@@ -754,3 +754,17 @@ tr.pager td {
             margin: 0;
         }
 }
+
+
+#authenticationInfo {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+.active a
+{
+    font-weight:bold;
+    color:#000!important;
+    border-bottom:2px solid #6FBAD7;
+}

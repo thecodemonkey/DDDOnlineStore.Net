@@ -1,4 +1,5 @@
-﻿using DDD.OnlineStore.Domain.Model;
+﻿using DDD.OnlineStore.Application.Web.Models;
+using DDD.OnlineStore.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,18 @@ namespace DDD.OnlineStore.Application.Web.Common
             set 
             {
                 Session["authenticated_user"] = value;                
+            }
+        }
+
+        public static NavigationModel Navigation
+        {
+            get
+            {
+                return Session["navigation_model"] as NavigationModel;
+            }
+            set
+            {
+                Session["navigation_model"] = value;
             }
         }
 

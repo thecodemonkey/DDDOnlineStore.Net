@@ -1,0 +1,17 @@
+﻿@using DDD.OnlineStore.Application.Web.Models
+
+@model NavigationModel
+
+<nav>
+    <ul id="menu">
+        @if(this.Request.IsAuthenticated)
+        {
+            foreach (NavigationItem item in Model.Items) 
+            {
+                string active = item.IsSelected ? "active" : string.Empty;
+                
+                <li class="@active">@Html.ActionLink(item.Label, item.Action, item.Controller)</li>
+            }
+        }
+    </ul>
+</nav>    

@@ -1,11 +1,11 @@
-﻿using DDD.OnlineStore.Application.Web.Common;
+﻿using DDD.OnlineStore.Application.Web.Common;      
 using DDD.OnlineStore.Application.Web.Services;
-using DDD.OnlineStore.Domain.Services;
-using Microsoft.Practices.Unity;
-using System;
+using DDD.OnlineStore.Domain.Services;      
+using Microsoft.Practices.Unity;        
+using System;                       
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Linq;          
+using System.Web;       
 using System.Web.Mvc;
 
 namespace DDD.OnlineStore.Application.Web.Controllers
@@ -36,6 +36,14 @@ namespace DDD.OnlineStore.Application.Web.Controllers
             }
 
             base.OnAuthorization(context);
+        }
+
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            NavigationService.SetNavigation(filterContext.ActionDescriptor.ActionName,
+                                            filterContext.ActionDescriptor.ControllerDescriptor.ControllerName);
+
+            base.OnActionExecuted(filterContext);
         }
 
         protected override void Dispose(bool disposing)

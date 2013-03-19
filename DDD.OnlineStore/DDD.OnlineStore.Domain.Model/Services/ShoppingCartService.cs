@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Services
-{
-    public class ShoppingCartService
-    {
+{                                           
+    public class ShoppingCartService : IDisposable
+    {                                                       
         private ProductRepository _productRepository;
         private UserRepository _userRepository;
 
@@ -19,7 +19,7 @@ namespace DDD.OnlineStore.Domain.Services
             this._userRepository = userRepository;
         }
 
-        public void UserBuysProduct(int productID, int quantity, string userName)        
+        public void AddProductToShoppingCart(int productID, int quantity, string userName)        
         {                                                                       
             User user = this._userRepository.GetUserByLoginName(userName);
             Product product = this._productRepository.GetByID(productID);
@@ -27,6 +27,28 @@ namespace DDD.OnlineStore.Domain.Services
             user.ShoppingCart.AddProduct(product, quantity);            
 
             this._userRepository.Save();
+        }
+
+        public UserRepository UserRepository 
+        {
+            get 
+            {
+                return this._userRepository;
+            }
+        }
+
+        public ProductRepository ProductRepository 
+        {
+            get 
+            {
+                return this._productRepository;
+            }
+        }
+
+        public void Dispose()
+        {
+            this._productRepository.Dispose();
+            this._userRepository.Dispose();
         }
     }
 }

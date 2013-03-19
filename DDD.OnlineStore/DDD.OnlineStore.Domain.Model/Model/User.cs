@@ -10,7 +10,7 @@ namespace DDD.OnlineStore.Domain.Model
     {
         public User() 
         {
-            this.ShoppingCart = new ShoppingCart();
+            //this.ShoppingCart = new ShoppingCart();
         }
 
         public string FirstName { get; set; }

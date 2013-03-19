@@ -1,0 +1,43 @@
+﻿@using DDD.OnlineStore.Domain.Model;
+@model ShoppingCart
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section top{
+   <h1>Warenkorb</h1>
+}
+
+<table>
+    <tr>
+        <th>Produktname</th>
+        <th>Einzelpreis</th>
+        <th>Menge</th>
+        <th>Preis</th>
+    </tr>
+@foreach(OrderItem item in Model.Items)
+{
+    <tr>
+        <td>@item.ProductName</td>
+        <td>@item.PriceOfSingleProduct</td>
+        <td>@item.Quantity</td>
+        <td>@item.TotalCosts</td>
+    </tr>    
+}
+    <tr>
+        <td colspan="4">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Anzahl verschiedener Produkte: </td>
+        <td colspan="3">@Model.QuantityUniqueItems</td>
+    </tr>
+    <tr>
+        <td>Gesamtmenge alle Produkte</td>
+        <td colspan="3">@Model.QuantityAllItems</td>
+    </tr>
+    <tr>
+        <td>Zu zahlender Betrag: </td>
+        <td colspan="3">@Model.TotalCosts</td>
+    </tr>
+</table>
