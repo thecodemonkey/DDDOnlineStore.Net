@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace DDD.OnlineStore.Domain.Repositories
 {
-    public class OrderRepository : RepositoryBase<PurchaseOrder>
+    public class PurchaseOrderRepository : RepositoryBase<PurchaseOrder>
     {
-        public OrderRepository(IRepository<PurchaseOrder> repository)
+        public PurchaseOrderRepository(IRepository<PurchaseOrder> repository)
             : base(repository)  {  }
 
         public IEnumerable<PurchaseOrder> GetOrdersByUserID(int userID) 
         {
-            throw new NotImplementedException();
-            //return this.Queryable.Where(o => o.Users.ID == userID).ToArray();
+            return this.Queryable.Where(o => o.UserID == userID).ToArray();
         }
     }
 }

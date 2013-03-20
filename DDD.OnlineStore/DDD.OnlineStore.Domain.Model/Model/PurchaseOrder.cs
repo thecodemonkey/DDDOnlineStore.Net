@@ -1,5 +1,5 @@
 ﻿using DDD.OnlineStore.Domain.Common;
-using System;
+using System;                       
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,8 @@ namespace DDD.OnlineStore.Domain.Model
     public class PurchaseOrder : OrderBase
     {
         public PurchaseOrder() : base() { }
+
+        public DateTime DateCreated { get; set; }
 
         protected override void Add(OrderItem item)
         {                                               

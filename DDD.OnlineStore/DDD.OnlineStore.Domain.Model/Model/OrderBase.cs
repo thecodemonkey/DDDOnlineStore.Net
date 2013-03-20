@@ -13,6 +13,9 @@ namespace DDD.OnlineStore.Domain.Model
             this.Items = new List<OrderItem>();
         }
 
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
+
         public int QuantityUniqueItems 
         { 
             get

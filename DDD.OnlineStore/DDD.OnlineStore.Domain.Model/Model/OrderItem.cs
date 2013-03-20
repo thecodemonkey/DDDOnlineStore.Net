@@ -37,5 +37,17 @@ namespace DDD.OnlineStore.Domain.Model
                 return this.ProductID > 0;
             }
         }
+
+        public OrderItem MakeCopy()
+        {                               
+            OrderItem copy = new OrderItem();
+
+            copy.ProductName = this.ProductName;
+            copy.ProductID = this.ProductID;            
+            copy.Quantity = this.Quantity;                      
+            copy.PriceOfSingleProduct = this.PriceOfSingleProduct;
+
+            return copy;
+        }
     }
 }

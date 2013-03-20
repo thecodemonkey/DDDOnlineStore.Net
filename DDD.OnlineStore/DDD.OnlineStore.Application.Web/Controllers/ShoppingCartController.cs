@@ -1,4 +1,5 @@
 ﻿using DDD.OnlineStore.Application.Web.Common;
+using DDD.OnlineStore.Application.Web.Services;
 using DDD.OnlineStore.Domain.Model;
 using DDD.OnlineStore.Domain.Services;
 using System;
@@ -11,21 +12,34 @@ namespace DDD.OnlineStore.Application.Web.Controllers
 {
     public class ShoppingCartController : ControllerBase
     {
-        private ShoppingCartService _shoppingCartService;
+        private ShoppingCartServiceApp _shoppingCartService;
 
-        public ShoppingCartController(ShoppingCartService shoppingCartService) 
+        public ShoppingCartController(ShoppingCartServiceApp shoppingCartService) 
         {
             this._shoppingCartService = shoppingCartService;
         }
 
         public ActionResult Index()
-        {                                   
-            var usr = this._shoppingCartService.UserRepository.GetUserByLoginName(this.User.Name);
-
-            ShoppingCart shoppingCart = usr.ShoppingCart;
+        {
+            var shoppingCart = this._shoppingCartService.ShoppingCartRepository.GetByUserID(this.User.UserID);
 
             return View(shoppingCart);
         }
 
+        [HttpPost]
+        public ActionResult Index(FormCollection values) 
+        {                                                       
+            this._shoppingCartService.ChangeProductQuantity(this.User.UserID, values);
+
+            return this.Index();
+        }
+
+        [HttpPost]
+        public ActionResult PurchaseCurrentShoppingCart() 
+        {                                                               
+            this._shoppingCartService.ShoppingCartServiceDomain.Purchase(this.User.UserID);
+
+            return this.View("Index", null);
+        }
     }
 }

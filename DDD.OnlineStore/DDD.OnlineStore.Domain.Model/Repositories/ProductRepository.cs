@@ -10,9 +10,6 @@ namespace DDD.OnlineStore.Domain.Repositories
 {
     public class ProductRepository : RepositoryBase<Product>
     {
-        public ProductRepository(IRepository<Product> repository) : base(repository)  
-        {
-            int x = 0;
-        }
+        public ProductRepository(IRepository<Product> repository) : base(repository)  { }
     }
 }

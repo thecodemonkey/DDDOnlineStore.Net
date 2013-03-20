@@ -19,5 +19,22 @@ namespace DDD.OnlineStore.Domain.Factories
 
             return item;
         }
+
+        public static PurchaseOrder CreatePurchaseOrder(ShoppingCart shoppingCart) 
+        {
+            if (shoppingCart.Items == null || shoppingCart.Items.Count < 1) 
+                throw new Exception("purchase order cannot be created from empty shopping! Add products to the shopping cart.");
+
+            PurchaseOrder order = new PurchaseOrder();
+            order.DateCreated = DateTime.Now;
+            order.UserID = shoppingCart.UserID;
+
+            foreach (OrderItem item in shoppingCart.Items) 
+            {
+                order.Items.Add(item.MakeCopy());
+            }
+
+            return order;
+        }
     }
 }

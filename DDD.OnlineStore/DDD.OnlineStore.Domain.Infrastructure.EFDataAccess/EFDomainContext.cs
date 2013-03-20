@@ -20,10 +20,21 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                        .HasOptional(a => a.ShoppingCart)
+            //modelBuilder.Entity<User>()
+            //            .HasOptional(a => a.ShoppingCart)
+            //            .WithMany()
+            //            .HasForeignKey(a => a.ShoppingCartID);
+
+            modelBuilder.Entity<ShoppingCart>()
+                        .HasOptional(a => a.User)
                         .WithMany()
-                        .HasForeignKey(a => a.ShoppingCartID);
+                        .HasForeignKey(a => a.UserID);
+
+            modelBuilder.Entity<PurchaseOrder>()
+                        .HasOptional(a => a.User)
+                        .WithMany()
+                        .HasForeignKey(a => a.UserID);
+
 
             modelBuilder.Entity<ShoppingCart>().ToTable("ShoppingCarts");
             modelBuilder.Entity<PurchaseOrder>().ToTable("PurchaseOrders");

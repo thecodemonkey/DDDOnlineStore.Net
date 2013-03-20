@@ -32,9 +32,13 @@ namespace DDD.OnlineStore.Application.Web
             container.RegisterType<EFDomainContext>(new HierarchicalLifetimeManager())
                      .RegisterDomainRepository<Product, ProductRepository>()
                      .RegisterDomainRepository<User, UserRepository>()
+                     .RegisterDomainRepository<PurchaseOrder, PurchaseOrderRepository>()
+                     .RegisterDomainRepository<ShoppingCart, ShoppingCartRepository>()
             //registers domain services
                      .RegisterDomainService<AuthenticationService, UserRepository>()
-                     .RegisterDomainService<ShoppingCartService>(typeof(ProductRepository), typeof(UserRepository));
+                     .RegisterDomainService<ShoppingCartService>(typeof(ProductRepository), 
+                                                                 typeof(ShoppingCartRepository), 
+                                                                 typeof(PurchaseOrderRepository));
             
             return container;
         }

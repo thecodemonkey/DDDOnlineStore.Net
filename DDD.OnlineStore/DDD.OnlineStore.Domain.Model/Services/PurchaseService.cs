@@ -10,9 +10,9 @@ namespace DDD.OnlineStore.Domain.Services
 {
     public class PurchaseService : IDisposable
     {
-        public OrderRepository _repository;
+        public PurchaseOrderRepository _repository;
 
-        public PurchaseService(OrderRepository repository) 
+        public PurchaseService(PurchaseOrderRepository repository) 
         {
             this._repository = repository;
         }

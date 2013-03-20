@@ -19,7 +19,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>EAAgAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAgAAIAAA=</HashCode>
+      <HashCode>EAAgAAAAAAAAAAAAAAgAAAAAAAAACAgAAAAAgAAIAAA=</HashCode>
       <FileName>Model\OrderItem.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -27,12 +27,12 @@
     <Position X="8.5" Y="0.5" Width="1.75" />
     <AssociationLine Name="Items" Type="DDD.OnlineStore.Domain.Model.OrderItem" FixedToPoint="true">
       <Path>
-        <Point X="10.25" Y="2.312" />
-        <Point X="12" Y="2.312" />
+        <Point X="10.25" Y="2.444" />
+        <Point X="12" Y="2.444" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAIgAAAAAAAADAAAAAAABAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIhAAAAAAAADAAAAAAABAgAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\OrderBase.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -49,14 +49,14 @@
   <Class Name="DDD.OnlineStore.Domain.Model.ShoppingCart">
     <Position X="10.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIQAQAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\ShoppingCart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DDD.OnlineStore.Domain.Model.PurchaseOrder">
     <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Model\PurchaseOrder.cs</FileName>
     </TypeIdentifier>
   </Class>

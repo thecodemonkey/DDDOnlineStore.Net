@@ -19,7 +19,7 @@ namespace DDD.OnlineStore.Domain.Model
         public string LoginName { get; set; }
         public string Password { get; set; }
 
-        public int? ShoppingCartID { get; set; }
-        public virtual ShoppingCart ShoppingCart { get; set; }
+        //public int? ShoppingCartID { get; set; }
+        //public virtual ShoppingCart ShoppingCart { get; set; }
     }
 }

@@ -1,0 +1,25 @@
+﻿@using DDD.OnlineStore.Domain.Model
+@model  IEnumerable<PurchaseOrder>
+
+
+@section top{
+   <h1>mein Kaufvorgänge</h1>
+}
+
+<table>
+    <tr>
+        <th>Datum der Bestellung</th>
+        <th>Verschiedene Produkte</th>
+        <th>Produkte insgesammt</th>
+        <th>Zu zahlender Betrag</th>
+    </tr>
+    @foreach (PurchaseOrder order in Model) 
+    {
+        <tr>
+            <td>@order.DateCreated</td>
+            <td>@order.QuantityUniqueItems</td>
+            <td>@order.QuantityAllItems</td>
+            <td>@order.TotalCosts</td>
+        </tr>        
+    }
+</table>

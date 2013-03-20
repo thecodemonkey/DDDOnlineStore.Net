@@ -38,5 +38,10 @@ namespace DDD.OnlineStore.Application.Web.Common
         {
             get { return this._user.LoginName; }
         }
+
+        public int UserID 
+        {
+            get { return this._user.ID; }
+        }
     }
 }

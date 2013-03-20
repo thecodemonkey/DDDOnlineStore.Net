@@ -14,7 +14,8 @@ namespace DDD.OnlineStore.Application.Web.Models
                 new NavigationItem("Produktverwaltung", "Index", "Product"),
                 new NavigationItem("Benutzerverwaltung", "Index", "User"),
                 new NavigationItem("Warenkorb", "Index", "ShoppingCart"),
-                new NavigationItem("Logout", "Logout", "Authentication")
+                new NavigationItem("Meine Bestellungen", "Index", "PurchaseOrder"),
+                new NavigationItem("Logout", "Logout", "Authentication")     
             };
         }
 
