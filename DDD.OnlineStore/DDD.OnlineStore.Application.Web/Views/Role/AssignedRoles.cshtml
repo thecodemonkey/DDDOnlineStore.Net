@@ -1,0 +1,17 @@
+﻿@using DDD.OnlineStore.Domain.Model
+@using DDD.OnlineStore.Application.Web.Models
+
+@model IEnumerable<AssignedRoleModel>
+
+
+@{
+    this.Layout = null;    
+}
+
+@foreach(var role in Model)
+{ 
+    <div class="editor-item">
+        <label>@role.Name</label>
+        @Html.CheckBox("cb_" + role.RoleID, role.IsAssigned)
+    </div>
+}  

@@ -13,7 +13,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
     public abstract class ControllerBase : Controller
     {
         [Dependency]
-        public virtual LoginService LoginService { get; set; }
+        public virtual LoginAppService LoginService { get; set; }
 
         public new UserIdentity User 
         {
@@ -40,7 +40,7 @@ namespace DDD.OnlineStore.Application.Web.Controllers
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            NavigationService.SetNavigation(filterContext.ActionDescriptor.ActionName,
+            NavigationAppService.SetNavigation(filterContext.ActionDescriptor.ActionName,
                                             filterContext.ActionDescriptor.ControllerDescriptor.ControllerName);
 
             base.OnActionExecuted(filterContext);

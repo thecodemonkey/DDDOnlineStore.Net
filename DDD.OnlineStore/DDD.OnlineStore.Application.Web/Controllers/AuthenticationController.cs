@@ -15,9 +15,9 @@ namespace DDD.OnlineStore.Application.Web.Controllers
 {
     public class AuthenticationController : ControllerBase
     {
-        private LoginService _loginService;
+        private LoginAppService _loginService;
 
-        public AuthenticationController(LoginService loginService)
+        public AuthenticationController(LoginAppService loginService)
         {
             this._loginService = loginService;
         }

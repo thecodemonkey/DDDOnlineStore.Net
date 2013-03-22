@@ -10,11 +10,11 @@ using System.Web.Security;
 
 namespace DDD.OnlineStore.Application.Web.Services
 {
-    public class LoginService : IDisposable
+    public class LoginAppService : IDisposable
     {
         private AuthenticationService _domainAuthService;
 
-        public LoginService(AuthenticationService domainAuthService) 
+        public LoginAppService(AuthenticationService domainAuthService) 
         {
             this._domainAuthService = domainAuthService;
         }

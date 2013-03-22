@@ -1,13 +1,8 @@
 ﻿@model DDD.OnlineStore.Domain.Model.User
 
-@{
-    ViewBag.Title = "Edit";
-}
-
 @section top{
    <h1>Benutzer - bearbeiten...</h1>
 }
-
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -15,47 +10,45 @@
 
     <fieldset>
         <legend>Person</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FirstName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FirstName)
-            @Html.ValidationMessageFor(model => model.FirstName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LoginName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LoginName)
-            @Html.ValidationMessageFor(model => model.LoginName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Password)
-        </div>
-        <div class="editor-field">
-            @Html.PasswordFor(model => model.Password)
-            @Html.ValidationMessageFor(model => model.Password)
+        <div class="editor-form-left">
+            <div class="editor-item">
+                @Html.LabelFor(model => model.FirstName)
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+            <div class="editor-item">
+                @Html.LabelFor(model => model.LastName)
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+            <div class="editor-item">
+                @Html.LabelFor(model => model.LoginName)
+                @Html.EditorFor(model => model.LoginName)
+                @Html.ValidationMessageFor(model => model.LoginName)
+            </div>
+            <div class="editor-item">
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            @Html.HiddenFor(model => model.ID)
         </div>
 
-        @Html.HiddenFor(model => model.ID)
-
+        <div class="editor-form-right">
+              @Html.Action("AssignedRoles", "Role", new { userID = Model.ID })
+        </div>
         <p>
             <input type="submit" value="Save" />
         </p>
     </fieldset>
+    
 }
 
+
+
 <div>
+
     @Html.ActionLink("Back to List", "Index")
+
 </div>
+

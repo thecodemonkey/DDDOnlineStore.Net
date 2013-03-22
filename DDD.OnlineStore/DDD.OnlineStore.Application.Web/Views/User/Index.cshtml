@@ -1,8 +1,5 @@
-﻿@model IEnumerable<DDD.OnlineStore.Domain.Model.User>
-
-@{
-    ViewBag.Title = "Index";
-} 
+﻿@using System.Linq
+@model IEnumerable<DDD.OnlineStore.Domain.Model.User>
 
 @section top{
    <h1>Alle Benutzer</h1>
@@ -11,16 +8,22 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
 <table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.LoginName)
+        </th>
+        <th>
+            Rollen
         </th>
         <th></th>
     </tr>
@@ -30,18 +33,27 @@
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.LoginName)
         </td>
+
+        <td>
+            @foreach (var role in item.Roles) 
+            {
+                <span>@role.Name,</span>
+            }
+        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-@*            @Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+
         </td>
     </tr>
 }
-
 </table>

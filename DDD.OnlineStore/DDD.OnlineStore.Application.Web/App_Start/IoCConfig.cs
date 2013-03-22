@@ -34,6 +34,8 @@ namespace DDD.OnlineStore.Application.Web
                      .RegisterDomainRepository<User, UserRepository>()
                      .RegisterDomainRepository<PurchaseOrder, PurchaseOrderRepository>()
                      .RegisterDomainRepository<ShoppingCart, ShoppingCartRepository>()
+                     .RegisterDomainRepository<Category, CategoryRepository>()
+                     .RegisterDomainRepository<Role, RoleRepository>()
             //registers domain services
                      .RegisterDomainService<AuthenticationService, UserRepository>()
                      .RegisterDomainService<ShoppingCartService>(typeof(ProductRepository), 

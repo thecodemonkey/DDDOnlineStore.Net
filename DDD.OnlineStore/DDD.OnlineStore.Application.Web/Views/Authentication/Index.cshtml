@@ -1,13 +1,12 @@
 ﻿@model DDD.OnlineStore.Application.Web.Models.AccountModel
 
-@{
-    ViewBag.Title = "Index";
-}
-
 @section top{
     <h1>Benutzerlogin</h1>
 }
+
        
+
+
 
 @using (Html.BeginForm("Login", "Authentication", FormMethod.Post, new { data_ajax = "false" }))
 {
@@ -16,27 +15,20 @@
 
     <fieldset>
         <legend>AccountModel</legend>
-
-        <div class="editor-label">
+        <div class="editor-item">
             @Html.LabelFor(model => model.UserName)
-        </div>
-        <div class="editor-field">
             @Html.EditorFor(model => model.UserName)
             @Html.ValidationMessageFor(model => model.UserName)
         </div>
 
-        <div class="editor-label">
+        <div class="editor-item">
             @Html.LabelFor(model => model.Password)
-        </div>
-        <div class="editor-field">
             @Html.PasswordFor(model => model.Password)
             @Html.ValidationMessageFor(model => model.Password)
         </div>
 
-        <div class="editor-label">
+        <div class="editor-item">
             @Html.LabelFor(model => model.RememberMe)
-        </div>
-        <div class="editor-field">
             @Html.EditorFor(model => model.RememberMe)
             @Html.ValidationMessageFor(model => model.RememberMe)
         </div>

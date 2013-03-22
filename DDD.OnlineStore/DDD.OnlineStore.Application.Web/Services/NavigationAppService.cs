@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace DDD.OnlineStore.Application.Web.Services
 {
-    public class NavigationService
+    public class NavigationAppService
     {
         public static void SetNavigation(string actionName, string controllerName) 
         {

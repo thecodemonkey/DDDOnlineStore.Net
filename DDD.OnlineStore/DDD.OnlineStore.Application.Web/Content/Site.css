@@ -180,8 +180,8 @@ footer {
 /* menu
 ----------------------------------------------------------*/
 ul#menu {
-    font-size: 1.3em;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: lighter;
     margin: 0 0 5px;
     padding: 0;
     text-align: right;
@@ -756,6 +756,8 @@ tr.pager td {
 }
 
 
+/* application styles */
+
 #authenticationInfo {
     position: absolute;
     right: 30px;
@@ -768,3 +770,43 @@ tr.pager td {
     color:#000!important;
     border-bottom:2px solid #6FBAD7;
 }
+
+
+/* Form styles */
+
+.editor-item 
+{
+    position:relative;
+    clear:both;
+    margin-bottom:5px;
+}
+
+    .editor-item label {
+        position:relative;
+        display:inline-block;
+        min-width:150px;
+    }
+
+    .editor-item input {
+        position:relative;
+        width:150px;
+    }
+
+    .editor-item input[type="checkbox"] {
+        width:20px;
+    }
+
+
+.editor-form-left, .editor-form-right
+{
+    position:relative;
+    float:left;
+    margin-right:10px;
+}
+
+fieldset p
+{
+    position:relative;
+    clear:both;
+}
+/*Form Styles END*/
