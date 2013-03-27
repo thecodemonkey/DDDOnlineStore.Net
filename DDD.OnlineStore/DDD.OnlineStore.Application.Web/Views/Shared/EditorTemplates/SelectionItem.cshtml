@@ -1,0 +1,8 @@
+﻿@model DDD.OnlineStore.Application.Web.Models.Common.SelectionItem
+
+    <div class="editor-item">
+        @Html.CheckBoxFor(m => m.IsSelected)
+        @Html.DisplayFor(m => m.Label)
+        @Html.HiddenFor(m => m.Label)
+        @Html.HiddenFor(m => m.ID)
+    </div>

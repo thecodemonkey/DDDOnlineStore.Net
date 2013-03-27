@@ -20,5 +20,12 @@ namespace DDD.OnlineStore.Domain.Model
         public string Password { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
+
+        //public virtual ICollection<UserRole> Roles { get; set; }
+
+        //public void AddRole(Role role) 
+        //{
+        //    this.Roles.Add(new UserRole { Role = role, User = this });
+        //}
     }
 }

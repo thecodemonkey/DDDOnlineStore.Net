@@ -18,6 +18,7 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess
         public virtual DbSet<PurchaseOrder> OrderSet { get; set; }
         public virtual DbSet<Product> ProductSet { get; set; }
         public virtual DbSet<Role> RoleSet { get; set; }
+        public virtual DbSet<Category> CategorySet { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

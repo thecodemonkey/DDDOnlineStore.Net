@@ -12,9 +12,9 @@ namespace DDD.OnlineStore.Application.Web.Models
             this.Items = new List<NavigationItem>{
                 new NavigationItem("Einkaufen", "Index", "Home", true),
                 new NavigationItem("Produktverwaltung", "Index", "Product"),
+                new NavigationItem("Kategorien", "Index", "Category"),
                 new NavigationItem("Benutzerverwaltung", "Index", "User"),
                 new NavigationItem("Rollen", "Index", "Role"),
-                new NavigationItem("Produktkategorien", "Index", "Category"),
                 new NavigationItem("Warenkorb", "Index", "ShoppingCart"),
                 new NavigationItem("Meine Bestellungen", "Index", "PurchaseOrder"),
                 new NavigationItem("Logout", "Logout", "Authentication")     

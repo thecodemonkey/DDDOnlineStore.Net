@@ -1,12 +1,14 @@
 ﻿@using System.Linq
-@model IEnumerable<DDD.OnlineStore.Domain.Model.User>
+@using DDD.OnlineStore.Application.Web.Models
+
+@model IEnumerable<UserModel>
 
 @section top{
    <h1>Alle Benutzer</h1>
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateUser")
 </p>
 
 <table>
@@ -14,11 +16,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.LoginName)
         </th>
@@ -33,24 +33,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
-
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
-
         <td>
             @Html.DisplayFor(modelItem => item.LoginName)
         </td>
-
         <td>
-            @foreach (var role in item.Roles) 
-            {
-                <span>@role.Name,</span>
-            }
+            @Html.DisplayFor(modelItem => item.AssignedRoles)
         </td>
-
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "EditUser", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
 
         </td>

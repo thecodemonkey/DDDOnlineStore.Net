@@ -17,12 +17,12 @@ namespace DDD.OnlineStore.Domain.Common
             this._repository = repository;
         }
 
-        public TEntity GetByID(int id)
+        public virtual TEntity GetByID(int id)
         {
             return this._repository.GetByID(id);
         }
 
-        public IQueryable<TEntity> Queryable
+        public virtual IQueryable<TEntity> Queryable
         {
             get
             {
@@ -30,35 +30,34 @@ namespace DDD.OnlineStore.Domain.Common
             }
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return this._repository.GetAll();
         }
 
-        public void Insert(TEntity entity)
+        public virtual void Insert(TEntity entity)
         {
             this._repository.Insert(entity);
         }
 
-        public void Update(TEntity entity) 
+        public virtual void Update(TEntity entity) 
         {
             this._repository.Update(entity);
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             this._repository.Delete(id);
         }
 
-        public void Save()
+        public virtual void Save()
         {
             this._repository.Save();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             this._repository.Dispose();
         }
-
     }
 }

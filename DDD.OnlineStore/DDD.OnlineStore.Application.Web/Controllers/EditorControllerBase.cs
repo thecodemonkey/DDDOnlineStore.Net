@@ -27,18 +27,18 @@ namespace DDD.OnlineStore.Application.Web.Controllers
             }
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View(this._repository.GetAll());
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View("Edit");
         }
 
         [HttpPost]
-        public ActionResult Create(TEntity entity)
+        public virtual ActionResult Create(TEntity entity)
         {
             try
             {
@@ -54,13 +54,13 @@ namespace DDD.OnlineStore.Application.Web.Controllers
             }
         }
 
-        public ActionResult Edit(int id)
+        public virtual ActionResult Edit(int id)
         {
             return View(this._repository.GetByID(id));
         }
 
         [HttpPost]
-        public ActionResult Edit(TEntity entity)
+        public virtual ActionResult Edit(TEntity entity)
         {
             try
             {
@@ -72,12 +72,12 @@ namespace DDD.OnlineStore.Application.Web.Controllers
             catch (Exception exp)
             {
                 this.ModelState.AddModelError("", exp.Message);
-                return View(entity);
+                return View("Edit", entity);
             }
         }
 
         //[HttpPost]
-        public ActionResult Delete(int id)
+        public virtual ActionResult Delete(int id)
         {
             try
             {

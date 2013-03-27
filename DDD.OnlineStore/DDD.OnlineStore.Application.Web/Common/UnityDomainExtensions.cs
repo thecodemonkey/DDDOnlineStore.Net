@@ -19,6 +19,15 @@ namespace DDD.OnlineStore.Application.Web.Common
                             .RegisterType<TDomainRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(IRepository<TEntity>)));
         }
 
+        public static IUnityContainer RegisterDomainRepository<TEntity, TDomainRepository, TCustomRepositoryImplementation>(this IUnityContainer container)
+            where TEntity : class, IEntity
+            where TDomainRepository : RepositoryBase<TEntity>
+            where TCustomRepositoryImplementation : EFGenericRepository<TEntity>
+        {
+            return container.RegisterType<IRepository<TEntity>, TCustomRepositoryImplementation>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(EFDomainContext)))
+                            .RegisterType<TDomainRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(IRepository<TEntity>)));
+        }
+
         public static IUnityContainer RegisterDomainService<TService, TDomainRepository>(this IUnityContainer container) 
         {
             return container.RegisterDomainService<TService>(typeof(TDomainRepository));

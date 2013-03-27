@@ -1,10 +1,13 @@
-﻿@model DDD.OnlineStore.Domain.Model.User
+﻿@using DDD.OnlineStore.Application.Web.Models
+
+@model UserModel
 
 @section top{
    <h1>Benutzer - bearbeiten...</h1>
 }
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -35,20 +38,15 @@
         </div>
 
         <div class="editor-form-right">
-              @Html.Action("AssignedRoles", "Role", new { userID = Model.ID })
+              @Html.EditorFor(model => model.AvailableRoles)
         </div>
         <p>
             <input type="submit" value="Save" />
         </p>
-    </fieldset>
-    
+    </fieldset>    
 }
 
-
-
 <div>
-
     @Html.ActionLink("Back to List", "Index")
-
 </div>
 

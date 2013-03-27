@@ -180,17 +180,22 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Factories\CategoryFactory.cs" />
+    <Compile Include="Factories\ProductFactory.cs" />
+    <Compile Include="Factories\RolesFactory.cs" />
+    <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\AssignedRoleModel.cs" />
+    <Compile Include="Models\Common\SelectionItem.cs" />
     <Compile Include="Models\NavigationModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NavigationAppService.cs" />
     <Compile Include="Services\LoginAppService.cs" />
     <Compile Include="Services\ShoppingCartAppService.cs" />
-    <Compile Include="Services\UserAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -310,7 +315,8 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
-    <Content Include="Views\Role\AssignedRoles.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SelectionItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectionItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

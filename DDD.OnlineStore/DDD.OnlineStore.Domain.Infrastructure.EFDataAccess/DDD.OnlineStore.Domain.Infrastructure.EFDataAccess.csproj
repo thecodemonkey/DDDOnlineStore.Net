@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DBContextExtensions.cs" />
     <Compile Include="Common\EFGenericRepository.cs" />
     <Compile Include="Configuration\DBConfiguration.cs" />
     <Compile Include="Configuration\DBInitializer.cs" />
     <Compile Include="EFDomainContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EFProductRepository.cs" />
+    <Compile Include="Repositories\EFUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

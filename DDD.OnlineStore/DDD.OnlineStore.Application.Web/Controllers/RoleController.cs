@@ -18,14 +18,14 @@ namespace DDD.OnlineStore.Application.Web.Controllers
             this._userRepository = userRepository;
         }
 
-        public ActionResult AssignedRoles(int userID)
-        {                                               
-            var user = this._userRepository.GetByID(userID);
-            var roles = this.Repository.GetAll();
+        //public ActionResult AssignedRoles(int userID)
+        //{                                               
+        //    var user = this._userRepository.GetByID(userID);
+        //    var roles = this.Repository.GetAll();
 
-            var assignedRoles = UserAppService.CreateAssignedRoles(roles, user.Roles);
+        //    var assignedRoles = UserAppService.CreateAssignedRoles(roles, user.Roles);
 
-            return View(assignedRoles);
-        }    
+        //    return View(assignedRoles);
+        //}    
     } 
 }

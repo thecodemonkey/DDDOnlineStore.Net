@@ -1,12 +1,16 @@
-﻿@model IEnumerable<DDD.OnlineStore.Domain.Model.Product>
+﻿@using System.Linq
+@using DDD.OnlineStore.Application.Web.Models
+
+@model IEnumerable<ProductModel>
 
 @section top{
    <h1>Alle Produkte</h1>
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateProduct")
 </p>
+
 <table>
     <tr>
         <th>
@@ -18,6 +22,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+        <th>Kategorien</th>
         <th></th>
     </tr>
 
@@ -33,10 +38,12 @@
             @Html.DisplayFor(modelItem => item.Price)€
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.DisplayFor(modelItem => item.AssignedCategories)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditProduct", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
-    </tr>
-}
-
+    </tr>  
+}        
 </table>

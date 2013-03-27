@@ -20,18 +20,32 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
             this._context = context;
         }
 
-        public TEntity GetByID(int id)
+        public virtual TEntity GetByID(int id)
         {
             return this.Queryable.Where(t => t.ID == id).FirstOrDefault();
         }
 
-        public void Insert(TEntity account)
+        public virtual void Attach(TEntity entity) 
         {
-            this._context.Set<TEntity>().Add(account);
+            this._context.Set<TEntity>().Attach(entity);
         }
 
-        public void Update(TEntity entity)
+        public virtual void Insert(TEntity entity)
         {
+            //TEntity original = this._context.Set<TEntity>().Find(entity.ID);
+            //this._context.Entry(original).CurrentValues.SetValues(entity);
+            //this._context.Entry(original).State = EntityState.Modified;
+
+            this._context.Set<TEntity>().Add(entity);
+        }
+
+        public virtual void Update(TEntity entity)
+        {
+            //TEntity original = this._context.Set<TEntity>().Find(entity.ID);
+            //this._context.Entry(original).CurrentValues.SetValues(entity);
+            //this._context.Entry(original).State = EntityState.Modified;
+
+
             this._context.Set<TEntity>().Attach(entity);
             this._context.Entry(entity).State = EntityState.Modified;
 
@@ -45,18 +59,18 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
             //}        
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var saved = this._context.Set<TEntity>().Find(id);
             this._context.Set<TEntity>().Remove(saved);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return this._context.Set<TEntity>().ToArray();
         }
 
-        public void Save()
+        public virtual void Save()
         {
             this._context.SaveChanges();
         }
@@ -73,15 +87,23 @@ namespace DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common
             this.isDisposed = true;
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-        public IQueryable<TEntity> Queryable
+        public virtual IQueryable<TEntity> Queryable
         {
             get { return this._context.Set<TEntity>().AsQueryable(); }
+        }
+
+        protected EFDomainContext DBContext 
+        {
+            get 
+            {
+                return this._context;
+            }
         }
     }
 }

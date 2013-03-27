@@ -7,7 +7,8 @@ using DDD.OnlineStore.Domain.Repositories;
 using DDD.OnlineStore.Domain.Services;
 using DDD.OnlineStore.Domain.Model;
 using DDD.OnlineStore.Application.Web.Common;
-using DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common; 
+using DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Common;
+using DDD.OnlineStore.Domain.Infrastructure.EFDataAccess.Repositories; 
 
 namespace DDD.OnlineStore.Application.Web
 {
@@ -30,18 +31,30 @@ namespace DDD.OnlineStore.Application.Web
             //be automatically called! Nice feature implemented by Unity.MVC3. More information about object lifetimemanagement
             //using Unity within MVC > 3 applications, look at this page: http://unitymvc3.codeplex.com/
             container.RegisterType<EFDomainContext>(new HierarchicalLifetimeManager())
-                     .RegisterDomainRepository<Product, ProductRepository>()
-                     .RegisterDomainRepository<User, UserRepository>()
+                     //.RegisterDomainRepository<Product, ProductRepository>()
+                     //.RegisterDomainRepository<User, UserRepository>()
                      .RegisterDomainRepository<PurchaseOrder, PurchaseOrderRepository>()
                      .RegisterDomainRepository<ShoppingCart, ShoppingCartRepository>()
                      .RegisterDomainRepository<Category, CategoryRepository>()
                      .RegisterDomainRepository<Role, RoleRepository>()
+                     .RegisterDomainRepository<User, UserRepository, EFUserRepository>()
+                     .RegisterDomainRepository<Product, ProductRepository, EFProductRepository>()
+
             //registers domain services
                      .RegisterDomainService<AuthenticationService, UserRepository>()
                      .RegisterDomainService<ShoppingCartService>(typeof(ProductRepository), 
                                                                  typeof(ShoppingCartRepository), 
                                                                  typeof(PurchaseOrderRepository));
-            
+           
+            //register custom ef specific repository!
+            //TODO: create also an extension method for this!
+            //container.RegisterType<IRepository<User>, EFUserRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(EFDomainContext)))
+            //                .RegisterType<UserRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(IRepository<User>)));
+
+            //container.RegisterType<IRepository<Product>, EFProductRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(EFDomainContext)))
+            //                .RegisterType<ProductRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(typeof(IRepository<Product>)));
+
+ 
             return container;
         }
     }
